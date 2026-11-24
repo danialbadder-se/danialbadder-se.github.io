@@ -1,0 +1,292 @@
+{
+  "period": "January 2024",
+  "visits": 513,
+  "wait": 36.32358674463938,
+  "satisfaction": 4.959183673469388,
+  "admissions": [
+    [
+      "Admitted",
+      269
+    ],
+    [
+      "Not Admitted",
+      244
+    ]
+  ],
+  "ages": [
+    [
+      "0-09",
+      76
+    ],
+    [
+      "10-19",
+      69
+    ],
+    [
+      "20-29",
+      64
+    ],
+    [
+      "30-39",
+      59
+    ],
+    [
+      "40-49",
+      58
+    ],
+    [
+      "50-59",
+      66
+    ],
+    [
+      "60-69",
+      99
+    ],
+    [
+      "70-79",
+      22
+    ]
+  ],
+  "timeliness": [
+    [
+      "Delay",
+      316
+    ],
+    [
+      "OnTime",
+      197
+    ]
+  ],
+  "gender": [
+    [
+      "Female",
+      241
+    ],
+    [
+      "Male",
+      272
+    ]
+  ],
+  "referrals": [
+    [
+      "None",
+      299
+    ],
+    [
+      "General Practice",
+      103
+    ],
+    [
+      "Orthopedics",
+      65
+    ],
+    [
+      "Physiotherapy",
+      14
+    ],
+    [
+      "Cardiology",
+      14
+    ],
+    [
+      "Neurology",
+      9
+    ],
+    [
+      "Renal",
+      5
+    ],
+    [
+      "Gastroenterology",
+      4
+    ]
+  ],
+  "daily": [
+    {
+      "day": 1,
+      "visits": 19,
+      "wait": 37.78947368421053,
+      "satisfaction": 6.666666666666667
+    },
+    {
+      "day": 2,
+      "visits": 14,
+      "wait": 38.214285714285715,
+      "satisfaction": 3.5
+    },
+    {
+      "day": 3,
+      "visits": 13,
+      "wait": 40.92307692307692,
+      "satisfaction": 4.5
+    },
+    {
+      "day": 4,
+      "visits": 22,
+      "wait": 34.5,
+      "satisfaction": 4.8
+    },
+    {
+      "day": 5,
+      "visits": 19,
+      "wait": 30.68421052631579,
+      "satisfaction": 7.75
+    },
+    {
+      "day": 6,
+      "visits": 15,
+      "wait": 37.666666666666664,
+      "satisfaction": 6.2
+    },
+    {
+      "day": 7,
+      "visits": 12,
+      "wait": 36.083333333333336,
+      "satisfaction": 3.75
+    },
+    {
+      "day": 8,
+      "visits": 21,
+      "wait": 43.523809523809526,
+      "satisfaction": 6.5
+    },
+    {
+      "day": 9,
+      "visits": 12,
+      "wait": 29.5,
+      "satisfaction": 3.0
+    },
+    {
+      "day": 10,
+      "visits": 13,
+      "wait": 38.07692307692308,
+      "satisfaction": 4.5
+    },
+    {
+      "day": 11,
+      "visits": 13,
+      "wait": 35.84615384615385,
+      "satisfaction": 6.0
+    },
+    {
+      "day": 12,
+      "visits": 16,
+      "wait": 32.625,
+      "satisfaction": 5.2
+    },
+    {
+      "day": 13,
+      "visits": 20,
+      "wait": 39.2,
+      "satisfaction": 4.4
+    },
+    {
+      "day": 14,
+      "visits": 25,
+      "wait": 35.28,
+      "satisfaction": 3.4545454545454546
+    },
+    {
+      "day": 15,
+      "visits": 20,
+      "wait": 32.55,
+      "satisfaction": 4.4
+    },
+    {
+      "day": 16,
+      "visits": 14,
+      "wait": 35.642857142857146,
+      "satisfaction": 5.833333333333333
+    },
+    {
+      "day": 17,
+      "visits": 17,
+      "wait": 38.76470588235294,
+      "satisfaction": 4.444444444444445
+    },
+    {
+      "day": 18,
+      "visits": 20,
+      "wait": 39.9,
+      "satisfaction": 5.333333333333333
+    },
+    {
+      "day": 19,
+      "visits": 10,
+      "wait": 41.6,
+      "satisfaction": 5.333333333333333
+    },
+    {
+      "day": 20,
+      "visits": 17,
+      "wait": 39.470588235294116,
+      "satisfaction": 5.571428571428571
+    },
+    {
+      "day": 21,
+      "visits": 15,
+      "wait": 27.733333333333334,
+      "satisfaction": 5.0
+    },
+    {
+      "day": 22,
+      "visits": 16,
+      "wait": 36.875,
+      "satisfaction": 6.4
+    },
+    {
+      "day": 23,
+      "visits": 18,
+      "wait": 40.333333333333336,
+      "satisfaction": 5.333333333333333
+    },
+    {
+      "day": 24,
+      "visits": 16,
+      "wait": 36.5,
+      "satisfaction": 3.75
+    },
+    {
+      "day": 25,
+      "visits": 15,
+      "wait": 32.86666666666667,
+      "satisfaction": 6.333333333333333
+    },
+    {
+      "day": 26,
+      "visits": 14,
+      "wait": 36.642857142857146,
+      "satisfaction": 10.0
+    },
+    {
+      "day": 27,
+      "visits": 16,
+      "wait": 36.5625,
+      "satisfaction": 5.0
+    },
+    {
+      "day": 28,
+      "visits": 20,
+      "wait": 32.15,
+      "satisfaction": 5.333333333333333
+    },
+    {
+      "day": 29,
+      "visits": 19,
+      "wait": 38.36842105263158,
+      "satisfaction": 4.8
+    },
+    {
+      "day": 30,
+      "visits": 14,
+      "wait": 33.07142857142857,
+      "satisfaction": 5.0
+    },
+    {
+      "day": 31,
+      "visits": 18,
+      "wait": 36.44444444444444,
+      "satisfaction": 1.4
+    }
+  ]
+}

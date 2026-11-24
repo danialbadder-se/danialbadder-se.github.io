@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TruthDetect</title>
+  <link rel="stylesheet" href="news-extension.css" />
+</head>
+<body inert>
+  <main class="wrap">
+    <h1>TruthDetect</h1>
+
+    <label for="backendUrl">Backend URL</label>
+    <input id="backendUrl" type="text" value="http://127.0.0.1:5000" />
+
+    <div class="row">
+      <button id="useSelectionBtn" type="button">Use Selected Text</button>
+      <button id="analyzePageTextBtn" type="button">Analyze Page Text</button>
+      <button id="analyzeUrlBtn" type="button">Check Page URL</button>
+    </div>
+
+    <label for="textInput">Text To Analyze</label>
+    <textarea id="textInput" rows="6" placeholder="Select text on page, or paste news text here..."></textarea>
+
+    <button id="analyzeTextBtn" class="primary" type="button">Analyze Text</button>
+
+    <section id="result" class="result hidden">
+      <p id="prediction"></p>
+      <p id="confidence"></p>
+      <p id="realFake"></p>
+      <p id="extra"></p>
+    </section>
+
+    <p id="status" class="status"></p>
+  </main>
+
+  
+</body>
+</html>

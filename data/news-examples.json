@@ -1,0 +1,29 @@
+{
+  "thresholds": {
+    "real": 0.44,
+    "fake": 0.66
+  },
+  "examples": [
+    {
+      "title": "Library notice",
+      "text": "The city library announced a revised weekend timetable on Tuesday. The notice lists opening hours for the reading room and the dates of the next public workshops. Visitors can check the timetable at the library reception desk.",
+      "real": 0.5306061017587278,
+      "fake": 0.4693938982412722,
+      "label": "UNCERTAIN"
+    },
+    {
+      "title": "Chain message",
+      "text": "Forward this message to everyone immediately! An unnamed insider says that every mobile phone will stop working at midnight. Share this now before the secret notice disappears. Nobody is allowed to tell you where this information came from.",
+      "real": 0.2204538807806501,
+      "fake": 0.7795461192193499,
+      "label": "FAKE"
+    },
+    {
+      "title": "Weather bulletin",
+      "text": "The local weather office issued a rainfall advisory for the district. The bulletin says intermittent showers are possible through the evening and the next update will be released tomorrow morning.",
+      "real": 0.45973569293404176,
+      "fake": 0.5402643070659583,
+      "label": "UNCERTAIN"
+    }
+  ]
+}

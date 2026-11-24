@@ -1,0 +1,8 @@
+{
+  "accuracy": 88.42,
+  "f1_score": 88.44,
+  "roc_auc": 96.62,
+  "train_samples": 4170,
+  "test_samples": 1390,
+  "dataset_samples": 5560
+}

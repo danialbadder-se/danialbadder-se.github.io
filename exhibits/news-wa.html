@@ -1,0 +1,260 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data:"><title>VeriCleri · Original detection desk</title><link rel="stylesheet" href="news-source.css"><style>
+    .desk { display:grid; gap:1rem; }
+    .news-banner {
+        border:2px solid #1a1a1a;
+        background:linear-gradient(180deg, rgba(255,255,255,.98), rgba(236,228,214,.96));
+        padding:.8rem .95rem;
+        display:flex;
+        justify-content:space-between;
+        gap:.65rem;
+        align-items:flex-end;
+        flex-wrap:wrap;
+    }
+    .news-banner strong { text-transform:uppercase; letter-spacing:.16em; font-size:.72rem; }
+    .news-banner span { color:#5b5b5b; font-size:.9rem; }
+
+    .headline { border:2px solid #1a1a1a; background:linear-gradient(180deg,#fff,#f5f1e8); padding:1rem; position:relative; overflow:hidden; }
+    .headline::after { content:""; position:absolute; right:-45px; top:-45px; width:160px; height:160px; background:radial-gradient(circle, rgba(178,25,36,.24), transparent 65%); pointer-events:none; }
+    .headline h1 { font-family:"Merriweather",serif; font-size:clamp(2rem,4vw,3.1rem); line-height:1.04; }
+    .headline p { color:#5b5b5b; margin-top:.5rem; max-width:60ch; }
+
+    .grid { display:grid; grid-template-columns:1.25fr .75fr; gap:.75rem; }
+    .panel, .aside { border:1px solid #bfae93; background:rgba(255,255,255,.98); }
+    .panel-head { padding:.7rem .8rem; border-bottom:1px solid #bfae93; font-weight:700; text-transform:uppercase; font-size:.78rem; letter-spacing:.08em; background:rgba(247,242,231,.8); }
+    .panel-body, .aside { padding:.85rem; }
+
+    .tabs { display:inline-flex; border:1px solid #1a1a1a; margin-bottom:.7rem; }
+    .tab-btn { border:none; background:#fff; padding:.48rem .68rem; font-weight:700; cursor:pointer; text-transform:uppercase; letter-spacing:.05em; font-size:.78rem; }
+    .tab-btn.active { background:#1a1a1a; color:#fff; }
+    .tab-btn.wa { color:#25d366; }
+    .tab-btn.wa.active { background:#25d366; color:#fff; }
+
+    .tab-pane { display:none; }
+    .tab-pane.active { display:block; }
+
+    .field-label { display:block; font-weight:700; margin-bottom:.28rem; text-transform:uppercase; letter-spacing:.05em; font-size:.78rem; }
+    .textarea, .input {
+        width:100%;
+        border:1px solid #1a1a1a;
+        background:#fff;
+        padding:.62rem .66rem;
+        font:inherit;
+        transition:border-color .2s ease, box-shadow .2s ease;
+    }
+
+    .textarea:focus, .input:focus {
+        outline:none;
+        border-color:#b21924;
+        box-shadow:0 0 0 3px rgba(178, 25, 36, 0.15);
+    }
+
+    .textarea { min-height:240px; resize:vertical; }
+
+    .meta { margin-top:.45rem; display:flex; justify-content:space-between; gap:.5rem; font-size:.83rem; color:#606060; }
+    .meta-bad { color:#b21924; font-weight:700; }
+
+    .url-preview { display:none; margin-top:.45rem; border:1px dashed #bfae93; padding:.48rem .55rem; background:#faf8f3; }
+    .url-preview.active { display:block; }
+
+    /* URL scraper status */
+    .scrape-status { display:none; margin-top:.4rem; font-size:.83rem; padding:.38rem .5rem; border:1px solid #bfae93; }
+    .scrape-status.show { display:block; }
+    .scrape-ok  { background:#e8f5ec; border-color:#2f7f45; color:#1e5c30; }
+    .scrape-err { background:#fbeaea; border-color:#b21924; color:#8a1010; }
+    .scrape-busy { background:#f5f1e8; color:#555; }
+
+    .actions { display:flex; flex-wrap:wrap; gap:.4rem; margin-top:.65rem; }
+    .btn-run, .btn-ghost { border:1px solid #1a1a1a; padding:.52rem .72rem; font-weight:700; text-transform:uppercase; font-size:.8rem; cursor:pointer; background:#fff; }
+    .btn-run { background:#1a1a1a; color:#fff; }
+    .btn-run:disabled { background:#a8a8a8; border-color:#a8a8a8; cursor:not-allowed; }
+    .btn-extract { border:1px solid #1c6f3a; background:#2f7f45; color:#fff; padding:.52rem .72rem; font-weight:700; text-transform:uppercase; font-size:.8rem; cursor:pointer; }
+    .btn-extract:disabled { opacity:.5; cursor:not-allowed; }
+    .btn-wa { border:1px solid #25d366; background:#25d366; color:#fff; padding:.52rem .72rem; font-weight:700; text-transform:uppercase; font-size:.8rem; cursor:pointer; }
+
+    .aside h3 { font-family:"Merriweather",serif; margin-bottom:.35rem; }
+    .tip, .sample-btn { border:1px solid #bfae93; padding:.5rem .55rem; margin-bottom:.42rem; background:#fcfbf8; font-size:.88rem; color:#585858; }
+    .sample-btn { width:100%; text-align:left; cursor:pointer; color:#2c2c2c; transition:transform .18s ease, background-color .18s ease; }
+    .sample-btn:hover { transform:translateX(2px); background:#f4efe6; }
+
+    .mini-note {
+        margin-top:.7rem;
+        border-top:1px solid #1a1a1a;
+        padding-top:.65rem;
+        color:#5c5c5c;
+        font-size:.85rem;
+    }
+
+    /* WhatsApp result panel */
+    .wa-result {
+        display:none; margin-top:.8rem;
+        border:2px solid #25d366; background:#f0fff4;
+        padding:.8rem;
+    }
+    .wa-result.show { display:block; }
+    .wa-result h3 { font-family:"Merriweather",serif; margin-bottom:.5rem; font-size:1rem; }
+    .wa-risk-bar-wrap { height:12px; background:#d4f5de; border:1px solid #25d366; overflow:hidden; margin:.35rem 0; }
+    .wa-risk-bar { height:100%; transition:width .7s ease; }
+    .risk-low  { background:#2f7f45; }
+    .risk-med  { background:#846224; }
+    .risk-high { background:#b21924; }
+    .wa-flags  { margin-top:.4rem; display:grid; gap:.25rem; }
+    .wa-flag   { font-size:.84rem; display:flex; align-items:center; gap:.4rem; color:#444; }
+
+    .loading-overlay {
+        position:fixed;
+        inset:0;
+        display:none;
+        place-items:center;
+        background:rgba(0,0,0,.33);
+        z-index:999;
+    }
+
+    .loading-overlay.active { display:grid; }
+
+    .loading-card {
+        border:1px solid #1a1a1a;
+        background:#fff;
+        width:min(330px,90vw);
+        padding:.85rem;
+        text-align:center;
+        position:relative;
+        overflow:hidden;
+    }
+
+    .spinner {
+        width:32px;
+        height:32px;
+        border:4px solid #d7d0c4;
+        border-top-color:#1a1a1a;
+        border-radius:50%;
+        margin:0 auto .45rem;
+        animation:spin .8s linear infinite;
+    }
+
+    @keyframes spin { to { transform:rotate(360deg); } }
+
+    @media (max-width:940px) {
+        .grid { grid-template-columns:1fr; }
+    }
+
+    body.dark-mode .news-banner,
+    body.dark-mode .headline,
+    body.dark-mode .panel,
+    body.dark-mode .aside {
+        background:#1e2732;
+        border-color:#2f3b47;
+    }
+
+    body.dark-mode .panel-head {
+        background:#161d27;
+        border-color:#2f3b47;
+        color:#e7e9ea;
+    }
+
+    body.dark-mode .tab-btn {
+        background:#1e2732;
+        color:#b0bec5;
+    }
+
+    body.dark-mode .tab-btn.active {
+        background:#0f1419;
+        color:#ffffff;
+    }
+
+    body.dark-mode .textarea,
+    body.dark-mode .input {
+        background:#0f1419;
+        color:#e7e9ea;
+        border-color:#2f3b47;
+    }
+
+    body.dark-mode .news-banner span,
+    body.dark-mode .headline p,
+    body.dark-mode .meta,
+    body.dark-mode .mini-note {
+        color:#b0bec5;
+    }
+
+    body.dark-mode .tip,
+    body.dark-mode .sample-btn,
+    body.dark-mode .url-preview,
+    body.dark-mode .scrape-status,
+    body.dark-mode .loading-card {
+        background:#161d27;
+        border-color:#2f3b47;
+        color:#b0bec5;
+    }
+
+    body.dark-mode .wa-result {
+        background:#102018;
+        border-color:#2f7f45;
+        color:#d1fae5;
+    }
+ body{margin:0!important;background:#f4f2ed!important}.desk{padding:14px;gap:10px;max-width:960px;margin:auto}.desk textarea{min-height:72px}.news-banner span{font-size:.76rem}.headline{padding:.7rem 1rem}.headline h1{font-size:2.2rem}.headline p{font-size:.86rem}.desk .tabs{margin-bottom:.65rem}.panel-body{font-size:.85rem}.meta{font-size:.75rem}</style></head><body><main class="desk" inert><section class="news-banner">
+        <strong>Newsroom Desk</strong>
+        <span>Paste text, URL, or a WhatsApp forward — inspect the verification brief before sharing.</span>
+    </section>
+
+    <section class="headline">
+        <h1>Detection Desk</h1>
+        <p>Submit text, URL, or a forwarded message — then inspect the report before sharing content.</p>
+    </section>
+
+    <article class="panel">
+            <div class="panel-head">Input Editor</div>
+            <div class="panel-body">
+                <div class="tabs">
+                    <button class="tab-btn" data-target="pane-text">Text</button>
+                    <button class="tab-btn" data-target="pane-url">URL</button>
+                    <button class="tab-btn active" data-target="pane-wa">📱 WhatsApp</button>
+                </div>
+
+                <!-- TEXT TAB -->
+                <!-- URL TAB -->
+                <!-- WHATSAPP TAB -->
+                <div id="pane-wa" class="tab-pane active">
+                    <label class="field-label" for="waText">Forwarded Message</label>
+                    <textarea id="waText" class="textarea" placeholder="Paste a WhatsApp or Telegram forwarded message here…"></textarea>
+                    <div class="meta">
+                        <span style="color:#25d366;"><i class="fas fa-shield-halved"></i> Forward risk scanner enabled</span>
+                        <span id="waCharMeta">0 words</span>
+                    </div>
+
+                    <!-- WhatsApp result card -->
+                    <div id="waResult" class="wa-result">
+                        <h3>📱 Forward Risk Report</h3>
+                        <div style="display:flex;justify-content:space-between;align-items:center;">
+                            <span style="font-weight:700;text-transform:uppercase;font-size:.82rem;">Risk Level:</span>
+                            <span id="waRiskLevel" style="font-weight:900;font-size:1.1rem;"></span>
+                        </div>
+                        <div class="wa-risk-bar-wrap">
+                            <div id="waRiskBar" class="wa-risk-bar" style="width:0%"></div>
+                        </div>
+                        <div style="font-size:.8rem;color:#555;margin-bottom:.3rem;">Risk Score: <strong id="waRiskScore">0</strong>/100</div>
+                        <div id="waFlags" class="wa-flags"></div>
+                        <div style="margin-top:.5rem;font-size:.82rem;border-top:1px solid #b5e8c5;padding-top:.4rem;">
+                            <strong>Content verdict:</strong>
+                            <span id="waVerdict"></span>
+                        </div>
+                    </div>
+
+                    <div class="actions">
+                        <button id="waCheckBtn" class="btn-wa" disabled>
+                            <i class="fas fa-magnifying-glass"></i> Check Forward
+                        </button>
+                        <button id="waAnalyzeBtn" class="btn-run" disabled>
+                            <i class="fas fa-brain"></i> Full Analysis
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Common actions for text/url tabs -->
+                <div id="mainActions" class="actions">
+                    <button id="analyzeBtn" class="btn-run"><i class="fas fa-magnifying-glass"></i> Analyze</button>
+                    <button id="clearBtn" class="btn-ghost">Clear</button>
+                    <button id="cleanBtn" class="btn-ghost">Clean Text</button>
+                </div>
+            </div>
+        </article>
+
+        </main></body></html>

@@ -1,0 +1,263 @@
+{
+  "population": {
+    "studies": 3851,
+    "paired": 3826,
+    "splits": {
+      "cal": 383,
+      "excluded": 25,
+      "test": 383,
+      "train": 2676,
+      "val": 384
+    },
+    "trained_observations": 14,
+    "alignment_policy": "Native pairs weakly assumed concordant when pair_concordant column absent; explicit 0/-1 pairs excluded from MSE.",
+    "original_atelectasis_mapping_fixed": 315
+  },
+  "models": [
+    {
+      "key": "image",
+      "macro_auroc": 0.7518519595782732,
+      "macro_average_precision": 0.1719300498304224,
+      "micro_f1": 0.3827956989247312,
+      "brier": 0.04384063988247299,
+      "pooled_ece_10_bins": 0.008423827412873676
+    },
+    {
+      "key": "text",
+      "macro_auroc": 0.9531766646696482,
+      "macro_average_precision": 0.6465504194063251,
+      "micro_f1": 0.8260162601626017,
+      "brier": 0.016268693271624855,
+      "pooled_ece_10_bins": 0.00470071753296268
+    },
+    {
+      "key": "concat",
+      "macro_auroc": 0.9535679194950785,
+      "macro_average_precision": 0.554047747213926,
+      "micro_f1": 0.8033613445378152,
+      "brier": 0.017947844624393486,
+      "pooled_ece_10_bins": 0.005498215882256705
+    },
+    {
+      "key": "full",
+      "macro_auroc": 0.9375931180411177,
+      "macro_average_precision": 0.5602905504615707,
+      "micro_f1": 0.8203389830508474,
+      "brier": 0.016224643010269886,
+      "pooled_ece_10_bins": 0.0032748020517735007
+    },
+    {
+      "key": "no_cross_attention",
+      "macro_auroc": 0.9360243880881219,
+      "macro_average_precision": 0.5244495606884335,
+      "micro_f1": 0.8154362416107382,
+      "brier": 0.017206818024497188,
+      "pooled_ece_10_bins": 0.003721753866280822
+    },
+    {
+      "key": "no_conflict_gate",
+      "macro_auroc": 0.9370015227262215,
+      "macro_average_precision": 0.5728080739433941,
+      "micro_f1": 0.7993079584775087,
+      "brier": 0.01816482655730196,
+      "pooled_ece_10_bins": 0.0038977250357335037
+    },
+    {
+      "key": "no_private",
+      "macro_auroc": 0.9361170141856636,
+      "macro_average_precision": 0.5101307283597787,
+      "micro_f1": 0.8144329896907216,
+      "brier": 0.01653986173439651,
+      "pooled_ece_10_bins": 0.004664111381247507
+    },
+    {
+      "key": "no_mse",
+      "macro_auroc": 0.9379749859109113,
+      "macro_average_precision": 0.5185126115969831,
+      "micro_f1": 0.8252427184466019,
+      "brier": 0.016454144589874407,
+      "pooled_ece_10_bins": 0.004581065794331304
+    },
+    {
+      "key": "no_kl",
+      "macro_auroc": 0.928976835305608,
+      "macro_average_precision": 0.5231569015314552,
+      "micro_f1": 0.8041237113402062,
+      "brier": 0.017789529668327673,
+      "pooled_ece_10_bins": 0.0028857159817130963
+    }
+  ],
+  "missing": [
+    {
+      "missing": 0,
+      "macro_auroc": 0.9375931180411177,
+      "micro_f1": 0.8203389830508474,
+      "brier": 0.01622464299052322
+    },
+    {
+      "missing": 20,
+      "macro_auroc": 0.9058389464302771,
+      "micro_f1": 0.7454617800146255,
+      "brier": 0.02199710507846609
+    },
+    {
+      "missing": 40,
+      "macro_auroc": 0.8778624449094153,
+      "micro_f1": 0.665471251792088,
+      "brier": 0.028077255228911305
+    },
+    {
+      "missing": 60,
+      "macro_auroc": 0.8376432835579473,
+      "micro_f1": 0.5900812775906422,
+      "brier": 0.03373869350102498
+    },
+    {
+      "missing": 80,
+      "macro_auroc": 0.8010887899502336,
+      "micro_f1": 0.503679562058198,
+      "brier": 0.03892276139254267
+    }
+  ],
+  "conflict": {
+    "status": "controlled_differing_weak_label_report_swaps_not_clinical_contradictions",
+    "studies": 376,
+    "auroc": 0.6718537799909462,
+    "average_precision": 0.6857891750052529,
+    "mean_matched_conflict": 0.05753481760621071,
+    "mean_swapped_conflict": 0.07829423993825912,
+    "qualification": "Different report-derived findings do not prove a true image/report conflict. Source correctness and medical hallucination prevention are not established."
+  },
+  "support": [
+    {
+      "label": "Atelectasis",
+      "train_positive": 222,
+      "train_negative": 2379,
+      "trained": true,
+      "test_positive": 30,
+      "test_negative": 346
+    },
+    {
+      "label": "Cardiomegaly",
+      "train_positive": 233,
+      "train_negative": 2368,
+      "trained": true,
+      "test_positive": 33,
+      "test_negative": 343
+    },
+    {
+      "label": "Consolidation",
+      "train_positive": 22,
+      "train_negative": 2579,
+      "trained": true,
+      "test_positive": 3,
+      "test_negative": 373
+    },
+    {
+      "label": "Edema",
+      "train_positive": 25,
+      "train_negative": 2576,
+      "trained": true,
+      "test_positive": 1,
+      "test_negative": 375
+    },
+    {
+      "label": "Enlarged Cardiomediastinum",
+      "train_positive": 11,
+      "train_negative": 2590,
+      "trained": true,
+      "test_positive": 3,
+      "test_negative": 373
+    },
+    {
+      "label": "Fracture",
+      "train_positive": 55,
+      "train_negative": 2546,
+      "trained": true,
+      "test_positive": 9,
+      "test_negative": 367
+    },
+    {
+      "label": "Lung Lesion",
+      "train_positive": 78,
+      "train_negative": 2523,
+      "trained": true,
+      "test_positive": 16,
+      "test_negative": 360
+    },
+    {
+      "label": "Lung Opacity",
+      "train_positive": 380,
+      "train_negative": 2221,
+      "trained": true,
+      "test_positive": 41,
+      "test_negative": 335
+    },
+    {
+      "label": "Pleural Effusion",
+      "train_positive": 105,
+      "train_negative": 2496,
+      "trained": true,
+      "test_positive": 13,
+      "test_negative": 363
+    },
+    {
+      "label": "Pneumonia",
+      "train_positive": 31,
+      "train_negative": 2570,
+      "trained": true,
+      "test_positive": 2,
+      "test_negative": 374
+    },
+    {
+      "label": "Pneumothorax",
+      "train_positive": 13,
+      "train_negative": 2588,
+      "trained": true,
+      "test_positive": 3,
+      "test_negative": 373
+    },
+    {
+      "label": "Pleural Other",
+      "train_positive": 30,
+      "train_negative": 2571,
+      "trained": true,
+      "test_positive": 5,
+      "test_negative": 371
+    },
+    {
+      "label": "Support Devices",
+      "train_positive": 151,
+      "train_negative": 2450,
+      "trained": true,
+      "test_positive": 24,
+      "test_negative": 352
+    },
+    {
+      "label": "No Finding",
+      "train_positive": 917,
+      "train_negative": 1684,
+      "trained": true,
+      "test_positive": 144,
+      "test_negative": 232
+    }
+  ],
+  "intervals": {
+    "brier": {
+      "estimate": 0.016224642953281923,
+      "lower": 0.01301593014302721,
+      "upper": 0.01967630108106681
+    },
+    "nll": {
+      "estimate": 0.06573232866987858,
+      "lower": 0.05369825931623712,
+      "upper": 0.0783189835151905
+    },
+    "micro_f1_at_0_5": {
+      "estimate": 0.8203389830508474,
+      "lower": 0.781724025520421,
+      "upper": 0.8566746020632031
+    }
+  },
+  "checkpoints": 27
+}

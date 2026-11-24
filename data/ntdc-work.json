@@ -1,0 +1,223 @@
+{
+  "rows": [
+    {
+      "A": "T",
+      "B": "Transformer",
+      "C": 11,
+      "F": "AT",
+      "G": "220kV",
+      "I": "220/132kV 250MVA",
+      "J": 16,
+      "K": 220,
+      "L": 132,
+      "N": "250MVA",
+      "row": 2,
+      "formulas": {
+        "C": "=LEN(B2)",
+        "I": "=CONCATENATE(K2,\"/\",L2,\"kV \",N2)",
+        "J": "=LEN(I2)"
+      }
+    },
+    {
+      "A": "T",
+      "B": "Transformer",
+      "C": 11,
+      "F": "AT",
+      "G": "220kV",
+      "I": "220/132kV 250MVH",
+      "J": 16,
+      "K": 220,
+      "L": 132,
+      "N": "250MVH",
+      "row": 3,
+      "formulas": {
+        "C": "=LEN(B3)",
+        "I": "=CONCATENATE(K3,\"/\",L3,\"kV \",N3)",
+        "J": "=LEN(I3)"
+      }
+    },
+    {
+      "A": "T",
+      "B": "Transformer",
+      "C": 11,
+      "F": "AT",
+      "G": "220kV",
+      "I": "220/132kV 250MVA",
+      "J": 16,
+      "K": 220,
+      "L": 132,
+      "N": "250MVA",
+      "row": 4,
+      "formulas": {
+        "C": "=LEN(B4)",
+        "I": "=CONCATENATE(K4,\"/\",L4,\"kV \",N4)",
+        "J": "=LEN(I4)"
+      }
+    },
+    {
+      "A": "T",
+      "B": "Transformer",
+      "C": 11,
+      "F": "AT",
+      "G": "220kV",
+      "I": "220/132kV 250MVA",
+      "J": 16,
+      "K": 220,
+      "L": 132,
+      "N": "250MVA",
+      "row": 5,
+      "formulas": {
+        "C": "=LEN(B5)",
+        "I": "=CONCATENATE(K5,\"/\",L5,\"kV \",N5)",
+        "J": "=LEN(I5)"
+      }
+    },
+    {
+      "A": "T",
+      "B": "Transformer",
+      "C": 11,
+      "F": "PT",
+      "G": "132KV",
+      "I": "132/11kV 13MVA",
+      "J": 14,
+      "K": 132,
+      "L": 11,
+      "N": "13MVA",
+      "row": 6,
+      "formulas": {
+        "C": "=LEN(B6)",
+        "I": "=CONCATENATE(K6,\"/\",L6,\"kV \",N6)",
+        "J": "=LEN(I6)"
+      }
+    }
+  ],
+  "checklist": [
+    [
+      1,
+      "Transformer",
+      "1) Rating in MVA.\n2) Make"
+    ],
+    [
+      2,
+      "Circuit Breaker",
+      "1) Short Circuit Current Rating\n2) Nominal Current Rating\n3) Mechnism Operating Voltage\n4) Insulation Medium\n5) Legacy Name\n6) Position"
+    ],
+    [
+      3,
+      "Disconnect Switches",
+      "1) Short Circuit Current Rating\n2) Nominal Current Rating\n3) Mechnism Operating Voltage\n4) Legacy Name\n5) Position\n6) Series / Parallel"
+    ],
+    [
+      4,
+      "Surge Arrestors",
+      "1) Voltage Rating \n2) Nominal Current Rating\n3) Positon( Line or TF)"
+    ],
+    [
+      5,
+      "Battery Bank",
+      "1) Operating Voltage\n2) Capacity"
+    ],
+    [
+      6,
+      "Battery Charger",
+      "1) Operating Voltage\n2) Capacity"
+    ],
+    [
+      7,
+      "CT.MCT",
+      "1) Rated Ratios\n2) Connected Rations\n3) Number of Cores\n4) Short Circuit Current\n5) Position\n6) Legacy Name"
+    ],
+    [
+      8,
+      "VT.MVT",
+      "1) Rated Ratios\n2) Connected Rations\n3) Number of Cores\n4) Short Circuit Current\n5) Position (Bus Bar / TF)"
+    ],
+    [
+      9,
+      "CVT",
+      "1) Rated Ratios\n2) Connected Rations\n3) Number of Cores\n4) Position (Bus Bar / TF)"
+    ],
+    [
+      10,
+      "CCVT",
+      "1) Rated Ratios\n2) Connected Rations\n3) Number of Cores\n4) Position (Bus Bar / TF)"
+    ],
+    [
+      11,
+      "Earth Switch",
+      "1) Short Circuit Current Rating\n2) Nominal Current Rating\n3) Mechnism Operating Voltage\n4) Legacy Name\n5) Position (Line Name)"
+    ],
+    [
+      12,
+      "OLTC",
+      "1) MVA Rating\n2) Legacy Name \n3) Type"
+    ],
+    [
+      13,
+      "Bus Bar",
+      "1) Type\n2) Size"
+    ],
+    [
+      14,
+      "Protecion Relays",
+      "1) Type of Relay (NU, ES, EM or SS)\n2) Position (Line or TF)"
+    ],
+    [
+      15,
+      "Control Panel",
+      "1) Type of Control Panel\n2) Position (Line or TF)"
+    ],
+    [
+      16,
+      "Relay Panel",
+      "1) Relay Panel Number\n2) Positon"
+    ],
+    [
+      17,
+      "Shunt Reactor",
+      "1) MVAR Rating \n2) Position (Line)"
+    ]
+  ],
+  "reference": [
+    [
+      "AT",
+      "Auto Transformer"
+    ],
+    [
+      "PT",
+      "Power Transformer"
+    ],
+    [
+      "AUX",
+      "Auxiliary Tr"
+    ],
+    [
+      "BA",
+      "Battery Bank"
+    ],
+    [
+      "BC",
+      "Battery Charger"
+    ],
+    [
+      "CP",
+      "Control Panel"
+    ],
+    [
+      "CB",
+      "Circuit Breaker"
+    ],
+    [
+      "CT",
+      "Current Transformer"
+    ],
+    [
+      "DS",
+      "Disconnector Switch"
+    ],
+    [
+      "VT",
+      "Voltage Transformer/Potential Transformer"
+    ]
+  ]
+}
